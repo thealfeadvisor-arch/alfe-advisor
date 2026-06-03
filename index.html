@@ -1,30 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alfe Advisor</title>
+
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
+font-family:Arial, Helvetica, sans-serif;
 background:#000533;
 color:white;
-font-family:Arial,sans-serif;
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+padding:25px 0;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.nav{
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-height:100vh;
-margin:0;
+}
+
+.logo{
+height:55px;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:clamp(40px,7vw,80px);
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+max-width:850px;
+margin:auto;
+opacity:.9;
+}
+
+.btn{
+display:inline-block;
+margin-top:35px;
+background:white;
+color:#000533;
+padding:16px 36px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.services{
+padding:80px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:48px;
+margin-bottom:50px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.about{
+padding:80px 0;
 text-align:center;
 }
-h1{
-font-size:60px;
+
+.about p{
+max-width:900px;
+margin:auto;
+font-size:20px;
+}
+
+footer{
+padding:40px 0;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);
+margin-top:50px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:15px 20px;
+border-radius:50px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+z-index:999;
 }
 </style>
 </head>
+
 <body>
 
-<div>
-<h1>ALFE ADVISOR</h1>
-<p>Web sitesi başarıyla yayına hazır.</p>
+<header>
+<div class="container nav">
+<img src="alfe advisor (3).png" class="logo" alt="Alfe Advisor">
 </div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>İşletmenizi Dijitalde Büyütelim</h1>
+
+<p>
+Meta reklam yönetimi, sosyal medya yönetimi,
+dijital danışmanlık ve satış & pazarlama eğitimleri ile
+işletmenizin daha fazla müşteriye ulaşmasına yardımcı oluyoruz.
+</p>
+
+<a href="https://wa.me/905305136902" class="btn">
+Randevu Oluştur
+</a>
+</div>
+</section>
+
+<section class="services">
+<div class="container">
+
+<h2 class="section-title">Hizmetlerimiz</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Meta Reklam Yönetimi</h3>
+<p>
+Meta platformlarında dönüşüm odaklı reklam kampanyaları oluşturuyor,
+işletmenizin daha fazla müşteri kazanmasını sağlıyoruz.
+</p>
+</div>
+
+<div class="card">
+<h3>Sosyal Medya Yönetimi</h3>
+<p>
+Markanızın sosyal medya hesaplarını profesyonel şekilde yönetiyor,
+kurumsal görünüm ve etkileşim sağlıyoruz.
+</p>
+</div>
+
+<div class="card">
+<h3>Dijital Danışmanlık</h3>
+<p>
+İşletmenizin dijital büyüme stratejisini oluşturuyor ve süreçleri
+profesyonel olarak yönetiyoruz.
+</p>
+</div>
+
+<div class="card">
+<h3>Satış & Pazarlama Eğitimleri</h3>
+<p>
+Ekiplerinize ve işletmenize özel satış artırmaya yönelik eğitimler
+sunuyoruz.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="about">
+<div class="container">
+<h2 class="section-title">Neden Alfe Advisor?</h2>
+
+<p>
+Alfe Advisor olarak markaların dijital dünyada büyümesini sağlayan,
+sonuç odaklı stratejiler geliştiren bir danışmanlık ajansıyız.
+Özellikle güzellik merkezleri için satış, pazarlama ve müşteri kazanımı
+konularında güçlü çözümler sunuyoruz.
+</p>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>© 2026 Alfe Advisor - Tüm Hakları Saklıdır.</p>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/905305136902">
+WhatsApp
+</a>
 
 </body>
 </html>
