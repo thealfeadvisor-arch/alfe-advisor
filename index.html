@@ -1,9 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Alfe Advisor</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
@@ -35,10 +35,10 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
+background:rgba(0,5,51,.92);
 backdrop-filter:blur(15px);
-background:rgba(0,5,51,.85);
+z-index:999;
 border-bottom:1px solid rgba(255,255,255,.08);
-z-index:1000;
 }
 
 .nav{
@@ -49,57 +49,38 @@ padding:15px 0;
 }
 
 .logo img{
-height:90px;
+height:120px;
 }
 
 .menu{
 display:flex;
-gap:35px;
+gap:30px;
 }
 
 .menu a{
-text-decoration:none;
 color:white;
-font-weight:600;
-transition:.3s;
-}
-
-.menu a:hover{
-opacity:.7;
-}
-
-.btn{
-background:white;
-color:#000533;
-padding:14px 28px;
-border-radius:50px;
-font-weight:700;
 text-decoration:none;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
+font-weight:600;
 }
 
 .hero{
 min-height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
+padding:150px 20px 100px;
 position:relative;
-overflow:hidden;
 }
 
 .hero::before{
 content:"";
 position:absolute;
-width:600px;
-height:600px;
+width:700px;
+height:700px;
 background:#0d6efd;
+opacity:.18;
 filter:blur(250px);
-opacity:.25;
 border-radius:50%;
 }
 
@@ -115,26 +96,41 @@ margin-bottom:25px;
 }
 
 .hero p{
-font-size:24px;
+font-size:22px;
+max-width:850px;
 line-height:1.8;
-max-width:900px;
 margin:auto;
 margin-bottom:40px;
 }
 
+.btn{
+display:inline-block;
+background:white;
+color:#000533;
+padding:16px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
 section{
-padding:110px 0;
+padding:100px 0;
 }
 
 .section-title{
-font-size:50px;
+font-size:48px;
 text-align:center;
 margin-bottom:60px;
 }
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
@@ -154,42 +150,59 @@ transform:translateY(-10px);
 margin-bottom:15px;
 }
 
-.about{
-text-align:center;
-font-size:22px;
-line-height:1.9;
-max-width:900px;
-margin:auto;
+.card p{
+line-height:1.8;
 }
 
-.contact{
+.about{
 text-align:center;
+max-width:900px;
+margin:auto;
+font-size:21px;
+line-height:2;
 }
 
 .contact-box{
-background:white;
-color:#000533;
-padding:40px;
-border-radius:25px;
-max-width:700px;
-margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
+padding:60px;
+backdrop-filter:blur(20px);
 }
 
-.contact-box p{
-margin:15px 0;
+.contact-logo img{
+width:280px;
+animation:floatLogo 4s ease-in-out infinite;
+}
+
+.contact-info h3{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.contact-info p{
+margin-bottom:15px;
 font-size:18px;
 }
 
-.contact-box a{
-color:#000533;
+.contact-info a{
+color:white;
 text-decoration:none;
-font-weight:600;
 }
 
-footer{
-padding:40px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.1);
+.contact-btn{
+display:inline-block;
+margin-top:20px;
+background:white;
+color:#000533;
+padding:15px 30px;
+border-radius:50px;
+font-weight:700;
+text-decoration:none;
 }
 
 .whatsapp{
@@ -199,16 +212,28 @@ bottom:25px;
 background:#25D366;
 color:white;
 text-decoration:none;
-padding:18px 25px;
+padding:18px 24px;
 border-radius:50px;
 font-weight:700;
 z-index:999;
 }
 
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+@keyframes floatLogo{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
 @media(max-width:768px){
 
 .logo img{
-height:70px;
+height:80px;
 }
 
 .menu{
@@ -224,9 +249,18 @@ font-size:18px;
 }
 
 .section-title{
-font-size:35px;
+font-size:32px;
 }
 
+.contact-box{
+flex-direction:column;
+text-align:center;
+padding:35px;
+}
+
+.contact-logo img{
+width:180px;
+}
 }
 
 </style>
@@ -235,11 +269,10 @@ font-size:35px;
 <body>
 
 <header>
-
 <div class="container nav">
 
 <div class="logo">
-<img src="alfe advisor (3).png">
+<img src="alfe advisor (3).png" alt="Alfe Advisor">
 </div>
 
 <div class="menu">
@@ -249,12 +282,7 @@ font-size:35px;
 <a href="#iletisim">İletişim</a>
 </div>
 
-<a href="https://wa.me/905305136902" class="btn">
-Randevu Oluştur
-</a>
-
 </div>
-
 </header>
 
 <section class="hero" id="anasayfa">
@@ -270,7 +298,7 @@ işletmenizin daha fazla müşteriye ulaşmasına yardımcı oluyoruz.
 </p>
 
 <a href="https://wa.me/905305136902" class="btn">
-Hemen İletişime Geç
+Randevu Oluştur
 </a>
 
 </div>
@@ -287,22 +315,22 @@ Hemen İletişime Geç
 
 <div class="card">
 <h3>Meta Reklam Yönetimi</h3>
-<p>Instagram ve Facebook reklamlarında maksimum dönüşüm.</p>
+<p>Instagram ve Facebook reklamlarında dönüşüm odaklı kampanyalar oluşturuyoruz.</p>
 </div>
 
 <div class="card">
 <h3>Sosyal Medya Yönetimi</h3>
-<p>Markanızı profesyonel şekilde konumlandırıyoruz.</p>
+<p>Markanızın sosyal medya hesaplarını profesyonel şekilde yönetiyoruz.</p>
 </div>
 
 <div class="card">
 <h3>Dijital Danışmanlık</h3>
-<p>İşletmeniz için büyüme odaklı stratejiler.</p>
+<p>İşletmeniz için sürdürülebilir büyüme stratejileri oluşturuyoruz.</p>
 </div>
 
 <div class="card">
-<h3>Satış & Pazarlama Eğitimi</h3>
-<p>Satış ekipleri ve işletme sahiplerine özel eğitimler.</p>
+<h3>Satış & Pazarlama Eğitimleri</h3>
+<p>Satış ekipleri ve işletme sahipleri için uygulamalı eğitimler veriyoruz.</p>
 </div>
 
 </div>
@@ -318,15 +346,7 @@ Hemen İletişime Geç
 <h2 class="section-title">Hakkımızda</h2>
 
 <div class="about">
-
-Alfe Advisor olarak özellikle güzellik merkezi sektöründe
-işletmelerin daha fazla müşteriye ulaşmasını sağlayan
-reklam sistemleri kuruyoruz.
-
-Meta reklam yönetimi, sosyal medya yönetimi,
-dijital danışmanlık ve satış eğitimleriyle
-işletmelerin sürdürülebilir büyümesine katkı sağlıyoruz.
-
+Alfe Advisor olarak özellikle güzellik merkezi sektöründe işletmelerin daha fazla müşteri kazanmasına yardımcı oluyoruz. Meta reklam yönetimi, sosyal medya yönetimi, dijital danışmanlık ve satış eğitimleri ile sürdürülebilir büyüme sağlıyoruz.
 </div>
 
 </div>
@@ -337,30 +357,29 @@ işletmelerin sürdürülebilir büyümesine katkı sağlıyoruz.
 
 <div class="container">
 
-<h2 class="section-title">İletişim</h2>
+<h2 class="section-title">İletişime Geçin</h2>
 
 <div class="contact-box">
 
-<p><strong>WhatsApp:</strong></p>
-<p>
-<a href="https://wa.me/905305136902">
-+90 530 513 69 02
-</a>
-</p>
+<div class="contact-logo">
+<img src="alfe advisor (3).png" alt="Logo">
+</div>
 
-<p><strong>Instagram:</strong></p>
-<p>
-<a href="https://instagram.com/alfeadvisor">
-@alfeadvisor
-</a>
-</p>
+<div class="contact-info">
 
-<p><strong>E-posta:</strong></p>
-<p>
-<a href="mailto:thealfeadvisor@gmail.com">
-thealfeadvisor@gmail.com
+<h3>Birlikte Büyüyelim 🚀</h3>
+
+<p>📱 <a href="https://wa.me/905305136902">+90 530 513 69 02</a></p>
+
+<p>📷 <a href="https://instagram.com/alfeadvisor">@alfeadvisor</a></p>
+
+<p>✉️ <a href="mailto:thealfeadvisor@gmail.com">thealfeadvisor@gmail.com</a></p>
+
+<a href="https://wa.me/905305136902" class="contact-btn">
+Hemen İletişime Geç
 </a>
-</p>
+
+</div>
 
 </div>
 
@@ -369,9 +388,7 @@ thealfeadvisor@gmail.com
 </section>
 
 <footer>
-
 © 2026 Alfe Advisor • Tüm Hakları Saklıdır
-
 </footer>
 
 <a class="whatsapp" href="https://wa.me/905305136902">
@@ -380,3 +397,4 @@ WhatsApp
 
 </body>
 </html>
+```
