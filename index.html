@@ -6,17 +6,18 @@
 <title>Alfe Advisor</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
 background:#000533;
 color:white;
-line-height:1.6;
 }
 
 .container{
@@ -26,117 +27,140 @@ margin:auto;
 }
 
 header{
-padding:25px 0;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#000533;
 border-bottom:1px solid rgba(255,255,255,.1);
+z-index:999;
 }
 
 .nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:20px 0;
 }
 
-.logo{
-height:55px;
+.logo img{
+height:80px;
+}
+
+.menu{
+display:flex;
+gap:30px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn{
+background:white;
+color:#000533;
+padding:14px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
 }
 
 .hero{
-min-height:90vh;
+height:100vh;
 display:flex;
 align-items:center;
-justify-content:center;
 text-align:center;
-padding:60px 20px;
 }
 
 .hero h1{
-font-size:clamp(40px,7vw,80px);
-line-height:1.1;
+font-size:72px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
-max-width:850px;
+font-size:24px;
+max-width:900px;
 margin:auto;
-opacity:.9;
+line-height:1.6;
+margin-bottom:40px;
 }
 
-.btn{
-display:inline-block;
-margin-top:35px;
-background:white;
-color:#000533;
-padding:16px 36px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.services{
-padding:80px 0;
+section{
+padding:120px 0;
 }
 
 .section-title{
 text-align:center;
-font-size:48px;
-margin-bottom:50px;
+font-size:50px;
+margin-bottom:60px;
 }
 
-.grid{
+.services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
 .card{
-background:rgba(255,255,255,.05);
-padding:30px;
+background:white;
+color:#000533;
+padding:35px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
 }
 
 .card h3{
 margin-bottom:15px;
-font-size:22px;
 }
 
 .about{
-padding:80px 0;
 text-align:center;
-}
-
-.about p{
 max-width:900px;
 margin:auto;
-font-size:20px;
+font-size:22px;
+line-height:1.8;
 }
 
 footer{
-padding:40px 0;
+padding:50px 0;
 text-align:center;
 border-top:1px solid rgba(255,255,255,.1);
-margin-top:50px;
 }
 
 .whatsapp{
 position:fixed;
-right:20px;
-bottom:20px;
+right:25px;
+bottom:25px;
 background:#25D366;
 color:white;
-text-decoration:none;
-padding:15px 20px;
+padding:18px 25px;
 border-radius:50px;
+text-decoration:none;
 font-weight:bold;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-z-index:999;
 }
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.menu{
+display:none;
+}
+
+.logo img{
+height:65px;
+}
+
+}
+
 </style>
 </head>
 
@@ -144,12 +168,27 @@ z-index:999;
 
 <header>
 <div class="container nav">
-<img src="alfe advisor (3).png" class="logo" alt="Alfe Advisor">
+
+<div class="logo">
+<img src="alfe advisor (3).png">
+</div>
+
+<div class="menu">
+<a href="#anasayfa">Ana Sayfa</a>
+<a href="#hizmetler">Hizmetler</a>
+<a href="#hakkimizda">Hakkımızda</a>
+</div>
+
+<a href="https://wa.me/905555555555" class="btn">
+Randevu Oluştur
+</a>
+
 </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="anasayfa">
 <div class="container">
+
 <h1>İşletmenizi Dijitalde Büyütelim</h1>
 
 <p>
@@ -158,76 +197,75 @@ dijital danışmanlık ve satış & pazarlama eğitimleri ile
 işletmenizin daha fazla müşteriye ulaşmasına yardımcı oluyoruz.
 </p>
 
-<a href="https://wa.me/905305136902" class="btn">
+<a href="https://wa.me/905555555555" class="btn">
 Randevu Oluştur
 </a>
+
 </div>
 </section>
 
-<section class="services">
+<section id="hizmetler">
+
 <div class="container">
 
 <h2 class="section-title">Hizmetlerimiz</h2>
 
-<div class="grid">
+<div class="services">
 
 <div class="card">
 <h3>Meta Reklam Yönetimi</h3>
-<p>
-Meta platformlarında dönüşüm odaklı reklam kampanyaları oluşturuyor,
-işletmenizin daha fazla müşteri kazanmasını sağlıyoruz.
-</p>
+<p>Instagram ve Facebook reklamlarıyla müşteri kazanımı.</p>
 </div>
 
 <div class="card">
 <h3>Sosyal Medya Yönetimi</h3>
-<p>
-Markanızın sosyal medya hesaplarını profesyonel şekilde yönetiyor,
-kurumsal görünüm ve etkileşim sağlıyoruz.
-</p>
+<p>Profesyonel içerik ve hesap yönetimi.</p>
 </div>
 
 <div class="card">
 <h3>Dijital Danışmanlık</h3>
-<p>
-İşletmenizin dijital büyüme stratejisini oluşturuyor ve süreçleri
-profesyonel olarak yönetiyoruz.
-</p>
+<p>İşletmenizi büyütecek stratejik yol haritası.</p>
 </div>
 
 <div class="card">
-<h3>Satış & Pazarlama Eğitimleri</h3>
-<p>
-Ekiplerinize ve işletmenize özel satış artırmaya yönelik eğitimler
-sunuyoruz.
-</p>
+<h3>Satış Eğitimi</h3>
+<p>Satış ekipleri ve işletme sahipleri için eğitim.</p>
 </div>
 
 </div>
 
 </div>
+
 </section>
 
-<section class="about">
-<div class="container">
-<h2 class="section-title">Neden Alfe Advisor?</h2>
+<section id="hakkimizda">
 
-<p>
-Alfe Advisor olarak markaların dijital dünyada büyümesini sağlayan,
-sonuç odaklı stratejiler geliştiren bir danışmanlık ajansıyız.
-Özellikle güzellik merkezleri için satış, pazarlama ve müşteri kazanımı
-konularında güçlü çözümler sunuyoruz.
-</p>
+<div class="container">
+
+<h2 class="section-title">Hakkımızda</h2>
+
+<div class="about">
+
+Alfe Advisor olarak işletmelerin dijital dünyada
+daha görünür hale gelmesi ve daha fazla müşteri kazanması için
+sonuç odaklı stratejiler geliştiriyoruz.
+
+Özellikle güzellik merkezi sektöründe edindiğimiz deneyim sayesinde
+yüksek dönüşüm sağlayan reklam sistemleri kuruyoruz.
+
 </div>
+
+</div>
+
 </section>
 
 <footer>
-<div class="container">
-<p>© 2026 Alfe Advisor - Tüm Hakları Saklıdır.</p>
-</div>
+
+© 2026 Alfe Advisor - Tüm Hakları Saklıdır
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/905305136902">
+<a class="whatsapp" href="https://wa.me/905555555555">
 WhatsApp
 </a>
 
